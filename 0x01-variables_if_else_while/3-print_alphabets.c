@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints the alphabet in lowercase,then in uppercase.
+ * main - prints the alphabet in lowercase,then in uppercase.
 (*
  *Return: 0 on success
  */
@@ -12,13 +12,13 @@ int main(void)
 
 	while (c <= 'z')
 	{
-		putchar(c)
-		c++
+		putchar(c);
+		c++;
 	}
 	while (d <= 'Z')
 	{
 		putchar(d);
-		d++
+		d++;
 	}
 
 	putchar(10);
