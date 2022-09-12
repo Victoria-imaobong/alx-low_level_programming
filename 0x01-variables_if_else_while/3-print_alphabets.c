@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - Prints the alphabet in lowercase,then in uppercase.
 (*
@@ -19,6 +20,8 @@ int main(void)
 		putchar(d);
 		d++
 	}
-	putchar('\n');
+
+	putchar(10);
+
 	return (0);
 }	
