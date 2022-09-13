@@ -6,10 +6,6 @@
  */
 int main(void)
 {
-	int a;
-
-	while ('a')
 	printf("_putchar\n");
-
 	return (0);
 }
