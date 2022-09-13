@@ -24,7 +24,7 @@ int main(void)
 	if (f == 98 && r == 99)
 	continue;
 	putchar(',');
-	putchar(',');
+	putchar(' ');
 	}
 	}
 	putchar('\n');
