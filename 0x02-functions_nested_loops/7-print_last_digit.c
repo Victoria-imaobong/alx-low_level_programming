@@ -16,5 +16,5 @@ int print_last_digit(int nld)
 	}
 
 	_putchar(pld + '0');
-	return (pld)
+	return (pld);
 }
