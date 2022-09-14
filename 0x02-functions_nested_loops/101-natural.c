@@ -2,7 +2,7 @@
 
 /**
  * main - Lists all the natural numbers below 10 24 (excluded)
- *        tha are multiples of 3 or 5.
+ *        that are multiples of 3 or 5.
  *
  * Return: Always 0.
  */
