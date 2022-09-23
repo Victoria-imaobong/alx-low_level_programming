@@ -4,23 +4,26 @@
  * _strncat - a function that concatenates two strings
  * @dest: destination
  * @src: source
- * @n: input of max bytes to be used
- * Return: Always 0 (Success)
+ * @n: integer n
+ * Return: returns destination string
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, co;
+	int m = 0;
+	int i;
 
-	for (i = 0; dest[i] != '\0'; i++)
+	for (i = 0; i < 1000; i++)
 	{
+		if (dest[i] == '\0')
+		{
+			break;
+		}
+		m++;
 	}
-
-	for (co = 0; co < n; co++)
+	for (i = 0; src[i] != '\0' && i < n; i++)
 	{
-		dest[i = co] = src[co];
-		if (src[co] == '\0')
-			co = n;
+		dest[m + i] = src[i];
 	}
-
+	dest[m + i] = '\0';
 	return (dest);
 }
