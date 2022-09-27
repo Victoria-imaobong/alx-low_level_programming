@@ -11,7 +11,7 @@
 void print_array(int *a, int n)
 {
 	int i;
-	
+
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", a[i]);
@@ -20,6 +20,6 @@ void print_array(int *a, int n)
 			printf(",");
 			printf(" ");
 		}
-	        printf("\n");
+	printf("\n");
 	}
 }
