@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 	{
 		return (0);
 	}
-	print ("%d\n"; change(atoi(argv[1])));
+	printf("%d\n");
+       	change(atoi(argv[1]));
 	return (0);
 }
 
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
  */
 int change(int cents)
 {
-	int q = 25, r = 10, s = 5, t =2, u = 1;
+	int q = 25, r = 10, s = 5, t = 2, u = 1;
 	int coins;
 
 	while (cents > 0)
