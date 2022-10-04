@@ -4,7 +4,7 @@
 
 /**
  * free_grid - a function that frees a 2 dimensional
- * grid previously created 
+ * grid previously created
  * @grid: 2 dimensional array to free
  * @height: input height (size)
  * Return: free the grid
