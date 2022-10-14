@@ -19,8 +19,6 @@ int sum_them_all(const unsigned int n, ...)
 	{
 		sum += va_arg(valist, const unsigned int);
 	}
-	printf("\n");
-
 	va_end(valist);
 
 	return (sum);
