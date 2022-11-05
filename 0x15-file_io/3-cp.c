@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	int file_from, file_to, file_from_r, wr_err;
 	char buf[1024];
 
-	if (argc <F11>!= 3)
+	if (argc != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 			closer(file_to);
 			exit(98);
 		}
-		wr_err = write(fil_to, buf, file_from_r);
+		wr_err = write(file_to, buf, file_from_r);
 		if (wr_err == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
@@ -62,7 +62,7 @@ void closer(int arg_files)
 {
 	int close_err;
 
-	close_err = close(arg_fles);
+	close_err = close(arg_files);
 
 	if (close_err == -1)
 	{
