@@ -35,4 +35,38 @@ int main(int argc, char *argv[])
 	{
 		file_from_r = read(file_from, buf, 1024);
 		if (file_from_r == -1)
-			dprintf(2, Error: Can't read from file
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			closer(file_from);
+			closer(file_to);
+			exit(98);
+		}
+		wr_err = write(fil_to, buf, file_from_r);
+		if (wr_err == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+
+		closer(file_from);
+		closer(file_to);
+		return (0);
+}
+
+/**
+ * closer - close with error
+ * @arg_files: argv 1 or 2
+ * Return: void
+ */
+void closer(int arg_files)
+{
+	int close_err;
+
+	close_err = close(arg_fles);
+
+	if (close_err == -1)
+	{
+		dprintf(2, "Error: Can't close fd %d\n", arg_files);
+		exit(100);
+	}
+}
