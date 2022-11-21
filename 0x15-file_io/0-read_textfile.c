@@ -4,36 +4,35 @@
  * POSIX standard output
  * @filename: file name
  * @letters: the number of letters it should read and print
- * Return: 0
+ * Return: the number of letter read and printed; or 0 on failure
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file, rd, wr;
-	char *buf;
+	int fdo, fdr, fdw;
+	char *temp;
 
 	if (filename == NULL)
 		return (0);
 
-	file = open(filename, O_RDONLY);
-
-	if (file == -1)
+	fdo = open(filename, O_RDONLY);
+	if (fdo < 0)
+	{
+		free(temp);
 		return (0);
+	}
 
-	buf = malloc(sizeof(char) * letters + 1);
-	if (buf == NULL)
+	fdr = read(fdo, temp, letters);
+	if (fdr < 0)
+	{
+		free(temp);
 		return (0);
+	}
 
-	rd = read(file, buf, letters);
-	if (rd == -1)
+	fdw = write(STDOUT_FILENO, temp, fdr);
+	free(temp);
+	close(fdo);
+
+	if (fdw < 0)
 		return (0);
-
-	buf[letters] = '\0';
-
-	wr = write(1, buf, rd);
-	if (wr == -1)
-		return (0);
-
-	close(file);
-	free(buf);
-	return (wr);
+	return ((ssize_t)fdw);
 }
