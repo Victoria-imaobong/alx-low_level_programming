@@ -1,6 +1,8 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
+
 /**
  *  print_numbers - prints numbers
  *  @separator: string to be printed between numbers
