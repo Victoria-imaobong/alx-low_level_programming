@@ -11,7 +11,7 @@ int sum_dlistint(dlistint_t *head)
 	size_t res = 0;
 
 	if (head == NULL)
-		return (NULL);
+		return (0);
 
 	while (head != NULL)
 	{
